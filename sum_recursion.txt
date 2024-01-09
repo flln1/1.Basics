@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int sum=0;
+void numbers(int i, int n) {
+    if(i>n) return;
+    sum+=i;
+    numbers(i+1, n);
+}
+int main() {
+    int n;
+    cin >> n;
+    numbers(1, n);
+    cout << sum;
+    return 0;
+}
