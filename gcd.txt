@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int gcd_brute(int a, int b) {
+    int gcd=0;
+    for(int i=1; i<=min(a,b); i++) {
+        if((a%i==0) && (b%i==0)) gcd=i;
+    }
+    return gcd;
+}
+int gcd_optimal(int a, int b) {
+    if(b==0) return a;
+    return gcd_optimal(b, a%b);
+}
+int main() {
+    int a,b;
+    cin >> a >> b;
+    cout << gcd_brute(a, b) << endl;
+    cout << gcd_optimal(a, b); 
+    return 0;
+}

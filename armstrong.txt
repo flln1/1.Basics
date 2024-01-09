@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int armstrong(int n) {
+    int cube=0;
+    int temp=n;
+    while(n>0) {
+        int digit=n%10;
+        cube=cube+(digit*digit*digit);
+        n/=10;
+    }
+    if(cube==temp) cout << "true";
+    else cout << "false";
+}
+int main() {
+    int n;
+    cin >> n;
+    armstrong(n);
+    return 0;
+}
